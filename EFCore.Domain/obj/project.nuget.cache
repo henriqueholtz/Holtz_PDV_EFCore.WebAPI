@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TS80dGCNohuDVhsCJ1BuflITgnhPMLwgui3bUgiMNWLEXU1nis5Hl2W2V2/peSsXUW/KucMM0NrH0PgmEWNDPw==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henrique\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Henrique\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

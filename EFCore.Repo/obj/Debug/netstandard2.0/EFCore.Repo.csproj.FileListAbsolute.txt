@@ -1,0 +1,12 @@
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Domain.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.csprojAssemblyReference.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.AssemblyInfoInputs.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.AssemblyInfo.cs
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.csproj.CoreCompileInputs.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Repo.deps.json
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Repo.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Domain.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.csproj.CopyComplete
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Repo.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.pdb

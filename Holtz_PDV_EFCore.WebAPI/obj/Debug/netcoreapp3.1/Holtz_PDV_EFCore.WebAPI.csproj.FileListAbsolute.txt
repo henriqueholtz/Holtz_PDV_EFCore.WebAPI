@@ -57,3 +57,7 @@ D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debu
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\obj\Debug\netcoreapp3.1\Holtz_PDV_EFCore.WebAPI.csproj.CoreCompileInputs.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\obj\Debug\netcoreapp3.1\Holtz_PDV_EFCore.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\obj\Debug\netcoreapp3.1\Holtz_PDV_EFCore.WebAPI.csprojAssemblyReference.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Domain.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Repo.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Domain.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Repo.pdb
