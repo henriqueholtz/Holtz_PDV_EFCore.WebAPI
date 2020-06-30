@@ -5,31 +5,45 @@ using System.Threading.Tasks;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Holtz_PDV_EFCore.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class FilialController : ControllerBase
     {
-        public readonly EmpresaContext _context;
-        public FilialController(EmpresaContext context)
+        public readonly IEFCoreRepo _repo;
+        public FilialController(IEFCoreRepo repo)
         {
-            _context = context;
+            _repo = repo;
         }
         // GET: api/<FilialController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("{ParEmpCod}")]
+        public async Task<IActionResult> Get(int ParEmpCod)
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                var filiais = await _repo.GetAllFiliais(ParEmpCod);
+                return Ok(filiais);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
         }
 
         // GET api/<FilialController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{ParEmpCod},{ParFilCod}")]
+        public async Task<IActionResult> GetByCod(int ParEmpCod,int ParFilCod)
         {
-            return "value";
+            try
+            {
+                var filial = await _repo.GetFilialByCod(ParEmpCod, ParFilCod);
+                return Ok(filial);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
         }
 
         // POST api/<FilialController>

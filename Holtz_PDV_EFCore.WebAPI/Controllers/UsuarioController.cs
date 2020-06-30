@@ -7,19 +7,23 @@ using EFCore.Domain;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Holtz_PDV_EFCore.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        public readonly EmpresaContext _context;
-        public UsuarioController(EmpresaContext context)
+        //public readonly EmpresaContext _context;
+        //public UsuarioController(EmpresaContext context)
+        //{
+        //    _context = context;
+        //}
+        public readonly IEFCoreRepo _repo;
+        public UsuarioController(IEFCoreRepo repo)
         {
-            _context = context;
+            _repo = repo;
         }
+
         // GET: api/<UsuarioController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -28,15 +32,12 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
         }
 
         // GET api/<UsuarioController>/5
-        [HttpGet("{x}")]
-        public ActionResult Get(int x)
+        [HttpGet("{cod}")]
+        public async Task<IActionResult> Get(int cod)
         {
             try
             {
-                var usuario = _context.Usuario
-                            .Where(y => y.UsuCod == x)
-                            .SingleOrDefault();
-                            //.ToList();
+                var usuario = await _repo.GetUsuarioByCod(cod);
                 return Ok(usuario);
             }
             catch (Exception ex)
@@ -47,14 +48,21 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
 
         // POST api/<UsuarioController>
         [HttpPost("{cod},{nome}")]
-        public ActionResult Post(int cod,string nome)
+        public async Task<IActionResult> Post(int cod,string nome)
         {
             try
             {
                 var usuario = new Usuario() { UsuCod = cod, UsuNom = nome, UsuSts = "A" };
-                _context.Add(usuario);
-                _context.SaveChanges();
-                return Ok(usuario);
+                _repo.Add(usuario);
+                if(await _repo.SaveChangeAsync())
+                {
+                    return Ok(usuario);
+                }
+                else
+                {
+                    return BadRequest("Não Encontrado!");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -70,14 +78,21 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
 
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                var user = new Usuario() { UsuCod = id };
-                _context.Usuario.Remove(user);
-                _context.SaveChanges();
-                return Ok(user);
+                var user = await _repo.GetUsuarioByCod(id);
+                _repo.Delete(user);
+                if (await _repo.SaveChangeAsync())
+                {
+                    return Ok("Deletado: " + user);
+                }
+                else
+                {
+                    return Ok("Não localizado!");
+                }
+                
             }
             catch (Exception ex)
             {

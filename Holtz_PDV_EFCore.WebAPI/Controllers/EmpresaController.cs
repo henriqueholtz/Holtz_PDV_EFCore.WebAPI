@@ -7,27 +7,29 @@ using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Holtz_PDV_EFCore.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class EmpresaController : ControllerBase
     {
-        public readonly EmpresaContext _context; //Add prop
-        public EmpresaController(EmpresaContext context) //Add ctor
+        private readonly IEFCoreRepo _repo;
+
+        //public readonly EmpresaContext _context; //Add prop
+        //public EmpresaController(EmpresaContext context)
+        public EmpresaController(IEFCoreRepo repo) //Add ctor
         {
-            _context = context;
+            _repo = repo;
+            //_context = context;
         }
         // GET: api/<EmpresaController>
         [HttpGet]
-        public ActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-
-                return Ok(new Empresa());
+                var empresas = await _repo.GetAllEmpresas();
+                return Ok(empresas);
             }
             catch (Exception ex)
             {
@@ -37,21 +39,29 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
 
         // GET api/<EmpresaController>/5
         [HttpGet("{id}")]
-        public ActionResult Get(int id)
+        public IActionResult Get(int id)
         {
             return Ok();
         }
 
         // POST api/Empresa
         [HttpPost]
-        public ActionResult Post(Empresa model)
+        public async Task<IActionResult> Post(Empresa model)
         {
             try
             {
+                //_context.Empresa.Add(model);
+                //_context.SaveChanges();
+                _repo.Add(model);
+                if(await _repo.SaveChangeAsync())
+                {
+                    return Ok("OK");
+                }
+                else
+                {
+                    return Ok("Não localizado.");
+                }
                 
-                _context.Empresa.Add(model);
-                _context.SaveChanges();
-                return Ok("BX");
             }
             catch (Exception ex)
             {
@@ -61,19 +71,23 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
         }
 
         // PUT api/<EmpresaController>/5
-        [HttpPut("{cod}")]
-        public ActionResult Put(int cod, Empresa x)
+        [HttpPut("{cod},{nome}")]
+        public async Task<IActionResult> Put(int cod, string nome)
         {
             try
             {
-                if(_context.Empresa.AsNoTracking().FirstOrDefault(x => x.EmpCod == cod) != null) //Se usar Find no lugar do "AsNoTracking()", ele trava a conexão/consulta do banco
+
+                //if(_context.Empresa.AsNoTracking().FirstOrDefault(x => x.EmpCod == cod) != null) //Se usar Find no lugar do "AsNoTracking()", ele trava a conexão/consulta do banco { 
+                //_context.Add(x);
+                //_context.SaveChanges();}
+                var empresa = new Empresa() { EmpCod = cod, EmpRaz = nome };
+                _repo.Add(empresa);
+                if(await _repo.SaveChangeAsync())
                 {
-                    _context.Add(x);
-                    _context.SaveChanges();
                     return Ok("Sucesso!");
                 }
-                else
-                {
+                else 
+                { 
                     return BadRequest("Não encontrado! ");
                 }
             }
@@ -87,8 +101,25 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
 
         // DELETE api/<EmpresaController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                var empresa = new Empresa() { EmpCod = id };
+                _repo.Delete(empresa);
+                if(await _repo.SaveChangeAsync())
+                {
+                    return Ok("Deletado!" + empresa);
+                }
+                else
+                {
+                    return Ok("Não localizado!");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
         }
     }
 }
