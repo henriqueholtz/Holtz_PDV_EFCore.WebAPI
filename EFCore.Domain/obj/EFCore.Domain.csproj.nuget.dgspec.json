@@ -4,14 +4,14 @@
     "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj": {
+    "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj",
-        "projectName": "EFCore.Domain",
-        "projectPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj",
+        "projectUniqueName": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj",
+        "projectName": "EFCore.Enums",
+        "projectPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj",
         "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\obj\\",
+        "outputPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,6 +42,73 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj",
+        "projectName": "EFCore.Domain",
+        "projectPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\EFCore.Domain.csproj",
+        "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
+        "outputPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\EFCore.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj": {
+                "projectPath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

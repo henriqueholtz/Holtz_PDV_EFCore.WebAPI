@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jjJlR0omLm78/Cpred8MVOJeFXtLF8dSC5nZ0F9xEWT6JC4NH34jq8Nlefs5DI6hdbVHPVGuxV8zom65VIvxkA==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio\\GitHub\\Holtz_PDV_EFCore.WebAPI\\CEFCore.Enums\\EFCore.Enums.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henrique\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Henrique\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

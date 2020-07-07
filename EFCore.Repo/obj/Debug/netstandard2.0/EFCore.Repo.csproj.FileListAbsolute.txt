@@ -10,3 +10,5 @@ D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandar
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Repo.pdb
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.dll
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\obj\Debug\netstandard2.0\EFCore.Repo.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Enums.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Repo\bin\Debug\netstandard2.0\EFCore.Enums.pdb

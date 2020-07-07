@@ -25,16 +25,20 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("EmpCpfCnpj")
-                        .HasColumnType("VARCHAR(18)");
+                        .HasColumnType("nvarchar(18)")
+                        .HasMaxLength(18);
 
                     b.Property<string>("EmpFan")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
                     b.Property<string>("EmpRaz")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
                     b.Property<string>("EmpSts")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("VARCHAR(1)")
+                        .HasMaxLength(1);
 
                     b.HasKey("EmpCod");
 
@@ -43,63 +47,91 @@ namespace EFCore.Repo.Migrations
 
             modelBuilder.Entity("EFCore.Domain.Filial", b =>
                 {
-                    b.Property<int>("EmpCod")
-                        .HasColumnType("int");
-
                     b.Property<int>("FilCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
+
+                    b.Property<int>("EmpCod")
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
                     b.Property<string>("FilFan")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
                     b.Property<string>("FilRaz")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
-                    b.HasKey("EmpCod", "FilCod");
+                    b.HasKey("FilCod");
+
+                    b.HasIndex("EmpCod");
 
                     b.ToTable("Filial");
                 });
 
             modelBuilder.Entity("EFCore.Domain.Pessoa", b =>
                 {
-                    b.Property<int>("EmpCod")
-                        .HasColumnType("int");
-
                     b.Property<int>("PesCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
+
+                    b.Property<int>("EmpCod")
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
                     b.Property<string>("PesCpfCnpj")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(18)")
+                        .HasMaxLength(18);
 
                     b.Property<string>("PesFan")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
                     b.Property<string>("PesRaz")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
-                    b.HasKey("EmpCod", "PesCod");
+                    b.Property<string>("PesSts")
+                        .HasColumnType("VARCHAR(1)")
+                        .HasMaxLength(1);
+
+                    b.HasKey("PesCod");
+
+                    b.HasIndex("EmpCod");
 
                     b.ToTable("Pessoa");
                 });
 
             modelBuilder.Entity("EFCore.Domain.Produto", b =>
                 {
-                    b.Property<int>("EmpCod")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
+
+                    b.Property<int>("EmpCod")
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
                     b.Property<string>("ProNcm")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("ProNom")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(130)")
+                        .HasMaxLength(130);
 
                     b.Property<string>("ProObs")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
-                    b.HasKey("EmpCod", "ProCod");
+                    b.Property<string>("ProSts")
+                        .HasColumnType("VARCHAR(1)")
+                        .HasMaxLength(1);
+
+                    b.HasKey("ProCod");
+
+                    b.HasIndex("EmpCod");
 
                     b.ToTable("Produto");
                 });
@@ -107,16 +139,20 @@ namespace EFCore.Repo.Migrations
             modelBuilder.Entity("EFCore.Domain.Usuario", b =>
                 {
                     b.Property<int>("UsuCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
                     b.Property<string>("UsuNom")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(70)")
+                        .HasMaxLength(70);
 
                     b.Property<string>("UsuSts")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("VARCHAR(1)")
+                        .HasMaxLength(1);
 
                     b.Property<string>("UsuTip")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
 
                     b.HasKey("UsuCod");
 
@@ -126,14 +162,54 @@ namespace EFCore.Repo.Migrations
             modelBuilder.Entity("EFCore.Domain.UsuarioEmpresas", b =>
                 {
                     b.Property<int>("UsuCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
                     b.Property<int>("EmpCod")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
 
-                    b.HasKey("UsuCod", "EmpCod");
+                    b.HasKey("UsuCod");
+
+                    b.HasIndex("EmpCod");
 
                     b.ToTable("UsuarioEmpresas");
+                });
+
+            modelBuilder.Entity("EFCore.Domain.Filial", b =>
+                {
+                    b.HasOne("EFCore.Domain.Empresa", "empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpCod")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EFCore.Domain.Pessoa", b =>
+                {
+                    b.HasOne("EFCore.Domain.Empresa", "empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpCod")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EFCore.Domain.Produto", b =>
+                {
+                    b.HasOne("EFCore.Domain.Empresa", "empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpCod")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EFCore.Domain.UsuarioEmpresas", b =>
+                {
+                    b.HasOne("EFCore.Domain.Empresa", "empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpCod")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

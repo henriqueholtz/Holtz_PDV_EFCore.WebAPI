@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CEFCore.Enums\EFCore.Enums.csproj" />
     <ProjectReference Include="..\EFCore.Domain\EFCore.Domain.csproj" />
     <ProjectReference Include="..\EFCore.Repo\EFCore.Repo.csproj" />
   </ItemGroup>

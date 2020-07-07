@@ -63,3 +63,7 @@ D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debu
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\obj\Debug\netcoreapp3.1\Holtz_PDV_EFCore.WebAPI.csproj.CoreCompileInputs.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\obj\Debug\netcoreapp3.1\Holtz_PDV_EFCore.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Enums.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\EFCore.Enums.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\Holtz_PDV_EFCore.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll

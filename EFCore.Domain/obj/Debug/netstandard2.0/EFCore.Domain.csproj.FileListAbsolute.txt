@@ -1,8 +1,12 @@
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfoInputs.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.AssemblyInfo.cs
-D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CoreCompileInputs.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.deps.json
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.dll
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Domain.pdb
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.dll
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Enums.dll
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\bin\Debug\netstandard2.0\EFCore.Enums.pdb
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csprojAssemblyReference.cache
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CopyComplete
+D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\EFCore.Domain\obj\Debug\netstandard2.0\EFCore.Domain.csproj.CoreCompileInputs.cache

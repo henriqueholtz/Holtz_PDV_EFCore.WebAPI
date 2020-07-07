@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using EFCore.Domain;
+using EFCore.Enums;
 using EFCore.Repo;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,7 +53,7 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
         {
             try
             {
-                var usuario = new Usuario() { UsuCod = cod, UsuNom = nome, UsuSts = "A" };
+                var usuario = new Usuario() { UsuCod = cod, UsuNom = nome, UsuSts = Status_AtivoInativo.ATIVO};
                 _repo.Add(usuario);
                 if(await _repo.SaveChangeAsync())
                 {

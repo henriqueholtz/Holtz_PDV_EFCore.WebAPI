@@ -5,6 +5,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200702222338_02072020.cs" />
+    <Compile Remove="Migrations\20200702222338_02072020.Designer.cs" />
+    <Compile Remove="Migrations\20200702224735_02072020.cs" />
+    <Compile Remove="Migrations\20200702224735_02072020.Designer.cs" />
+    <Compile Remove="Migrations\20200703090936_03-07-2020-2.cs" />
+    <Compile Remove="Migrations\20200703090936_03-07-2020-2.Designer.cs" />
+    <Compile Remove="Migrations\20200703092858_03-07-2020-2.cs" />
+    <Compile Remove="Migrations\20200703092858_03-07-2020-2.Designer.cs" />
+    <Compile Remove="Migrations\20200703100039_03-07-2020-3.cs" />
+    <Compile Remove="Migrations\20200703100039_03-07-2020-3.Designer.cs" />
+    <Compile Remove="Migrations\20200703100329_03-07-2020-3.cs" />
+    <Compile Remove="Migrations\20200703100329_03-07-2020-3.Designer.cs" />
+    <Compile Remove="Migrations\20200703100733_03-07-2020-3.cs" />
+    <Compile Remove="Migrations\20200703100733_03-07-2020-3.Designer.cs" />
+    <Compile Remove="Migrations\20200706085503_001.cs" />
+    <Compile Remove="Migrations\20200706085503_001.Designer.cs" />
+    <Compile Remove="Migrations\20200706090338_001.cs" />
+    <Compile Remove="Migrations\20200706090338_001.Designer.cs" />
+    <Compile Remove="Migrations\20200706091221_001.cs" />
+    <Compile Remove="Migrations\20200706091221_001.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
@@ -18,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CEFCore.Enums\EFCore.Enums.csproj" />
     <ProjectReference Include="..\EFCore.Domain\EFCore.Domain.csproj" />
   </ItemGroup>
 
