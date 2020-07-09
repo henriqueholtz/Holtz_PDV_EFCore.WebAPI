@@ -14,7 +14,7 @@
         public const string VarChar10000  = "VARCHAR(10000)";
 
 
-        public const string Status_AtivoInativo = "VARCHAR(1)";
+        public const string Status_AtivoInativo = "TINYINT";
         public const string Status_Duplicata    = "VARCHAR(8)";
 
 

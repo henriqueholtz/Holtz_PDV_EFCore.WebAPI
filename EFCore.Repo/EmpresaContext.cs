@@ -15,12 +15,15 @@ namespace EFCore.Repo
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Marca> Marca { get; set; }
         //public DbSet<Duplicata> Duplicata { get; set; }
+
+
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //agr faz pelo appsettings.json e Startup.cs
             //optionsBuilder.UseSqlServer(@"Password=123456;Persist Security Info=True;User ID=sa;Initial Catalog=BD_Holtz_PDV_2;Data Source=HENRIQUE-NOT\SQL2014");
         }*/
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Company
@@ -80,8 +83,6 @@ namespace EFCore.Repo
             //{
             //    entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
             //    entity.Property(pk => pk.CreCod).ValueGeneratedNever();//RemoveIdentity
-            //    //entity.Property(vlrDup => vlrDup.CreVlrDup).HasColumnType(Type.Moeda.Type);
-            //    //entity.Property(vlrSdo => vlrSdo.CreVlrSdo).HasColumnType(Type.Moeda.Type);
             //});
         }
     }

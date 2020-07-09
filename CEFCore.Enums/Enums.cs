@@ -4,10 +4,10 @@
     /***************\
           STATUS
     \***************/
-    public enum Status_AtivoInativo
+    public enum Status_AtivoInativo : byte
     {
-        ATIVO = 'A',
-        INATIVO = 'I'
+        ATIVO = 1,
+        INATIVO = 0
     }
     public enum Status_Duplicata
     {

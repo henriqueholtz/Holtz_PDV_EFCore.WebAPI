@@ -33,8 +33,8 @@ namespace EFCore.Repo.Migrations
                     b.Property<string>("EmpRaz")
                         .HasColumnType("VARCHAR(150)");
 
-                    b.Property<string>("EmpSts")
-                        .HasColumnType("VARCHAR(1)");
+                    b.Property<byte?>("EmpSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("EmpCod");
 
@@ -103,8 +103,8 @@ namespace EFCore.Repo.Migrations
                     b.Property<string>("PesRaz")
                         .HasColumnType("VARCHAR(150)");
 
-                    b.Property<string>("PesSts")
-                        .HasColumnType("VARCHAR(1)");
+                    b.Property<byte?>("PesSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("PesCod");
 
@@ -132,8 +132,8 @@ namespace EFCore.Repo.Migrations
                     b.Property<string>("ProObs")
                         .HasColumnType("VARCHAR(1000)");
 
-                    b.Property<string>("ProSts")
-                        .HasColumnType("VARCHAR(1)");
+                    b.Property<byte?>("ProSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("ProCod");
 
@@ -151,8 +151,8 @@ namespace EFCore.Repo.Migrations
                     b.Property<string>("UsuNom")
                         .HasColumnType("VARCHAR(75)");
 
-                    b.Property<string>("UsuSts")
-                        .HasColumnType("VARCHAR(1)");
+                    b.Property<byte?>("UsuSts")
+                        .HasColumnType("TINYINT");
 
                     b.Property<string>("UsuTip")
                         .HasColumnType("VARCHAR(1)");

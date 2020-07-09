@@ -11,10 +11,10 @@ namespace EFCore.Repo.Migrations
                 columns: table => new
                 {
                     EmpCod = table.Column<int>(maxLength: 8, nullable: false),
-                    EmpRaz = table.Column<string>(maxLength: 130, nullable: true),
-                    EmpFan = table.Column<string>(maxLength: 130, nullable: true),
-                    EmpCpfCnpj = table.Column<string>(maxLength: 18, nullable: true),
-                    EmpSts = table.Column<int>(maxLength: 1, nullable: true)
+                    EmpRaz = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    EmpFan = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    EmpCpfCnpj = table.Column<string>(type: "VARCHAR(18)", nullable: true),
+                    EmpSts = table.Column<byte>(type: "TINYINT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -26,9 +26,9 @@ namespace EFCore.Repo.Migrations
                 columns: table => new
                 {
                     UsuCod = table.Column<int>(maxLength: 8, nullable: false),
-                    UsuNom = table.Column<string>(maxLength: 70, nullable: true),
-                    UsuSts = table.Column<int>(maxLength: 1, nullable: true),
-                    UsuTip = table.Column<string>(maxLength: 1, nullable: true)
+                    UsuNom = table.Column<string>(type: "VARCHAR(75)", nullable: true),
+                    UsuSts = table.Column<byte>(type: "TINYINT", nullable: true),
+                    UsuTip = table.Column<string>(type: "VARCHAR(1)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -41,8 +41,8 @@ namespace EFCore.Repo.Migrations
                 {
                     FilCod = table.Column<int>(maxLength: 8, nullable: false),
                     EmpCod = table.Column<int>(maxLength: 8, nullable: false),
-                    FilRaz = table.Column<string>(maxLength: 130, nullable: true),
-                    FilFan = table.Column<string>(maxLength: 130, nullable: true)
+                    FilRaz = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    FilFan = table.Column<string>(type: "VARCHAR(150)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,15 +56,34 @@ namespace EFCore.Repo.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Marca",
+                columns: table => new
+                {
+                    MarCod = table.Column<int>(maxLength: 8, nullable: false),
+                    EmpCod = table.Column<int>(maxLength: 8, nullable: false),
+                    MarNom = table.Column<string>(type: "VARCHAR(50)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Marca", x => x.MarCod);
+                    table.ForeignKey(
+                        name: "FK_Marca_Empresa_EmpCod",
+                        column: x => x.EmpCod,
+                        principalTable: "Empresa",
+                        principalColumn: "EmpCod",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pessoa",
                 columns: table => new
                 {
                     PesCod = table.Column<int>(maxLength: 8, nullable: false),
                     EmpCod = table.Column<int>(maxLength: 8, nullable: false),
-                    PesRaz = table.Column<string>(maxLength: 130, nullable: true),
-                    PesFan = table.Column<string>(maxLength: 130, nullable: true),
-                    PesCpfCnpj = table.Column<string>(maxLength: 18, nullable: true),
-                    PesSts = table.Column<int>(maxLength: 1, nullable: true)
+                    PesRaz = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    PesFan = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    PesCpfCnpj = table.Column<string>(type: "VARCHAR(18)", nullable: true),
+                    PesSts = table.Column<byte>(type: "TINYINT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -83,10 +102,10 @@ namespace EFCore.Repo.Migrations
                 {
                     ProCod = table.Column<int>(maxLength: 8, nullable: false),
                     EmpCod = table.Column<int>(maxLength: 8, nullable: false),
-                    ProNom = table.Column<string>(maxLength: 130, nullable: true),
-                    ProObs = table.Column<string>(maxLength: 1000, nullable: true),
-                    ProNcm = table.Column<string>(maxLength: 50, nullable: true),
-                    ProSts = table.Column<int>(maxLength: 1, nullable: true)
+                    ProNom = table.Column<string>(type: "VARCHAR(150)", nullable: true),
+                    ProObs = table.Column<string>(type: "VARCHAR(1000)", nullable: true),
+                    ProNcm = table.Column<string>(type: "VARCHAR(50)", nullable: true),
+                    ProSts = table.Column<byte>(type: "TINYINT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -123,6 +142,11 @@ namespace EFCore.Repo.Migrations
                 column: "EmpCod");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Marca_EmpCod",
+                table: "Marca",
+                column: "EmpCod");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Pessoa_EmpCod",
                 table: "Pessoa",
                 column: "EmpCod");
@@ -142,6 +166,9 @@ namespace EFCore.Repo.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Filial");
+
+            migrationBuilder.DropTable(
+                name: "Marca");
 
             migrationBuilder.DropTable(
                 name: "Pessoa");

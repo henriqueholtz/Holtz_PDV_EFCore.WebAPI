@@ -12,8 +12,7 @@ namespace EFCore.Domain
     public class Pessoa
     {
         //------------------------------------------------------------------------------------
-        [MaxLength(8)]
-        [ForeignKey("empresa")]
+        [MaxLength(8)] [ForeignKey("empresa")]
         public int EmpCod { get; set; }
         public Empresa empresa { get; set; }
         //------------------------------------------------------------------------------------

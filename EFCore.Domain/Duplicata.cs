@@ -23,7 +23,7 @@ namespace EFCore.Domain
         public DateTime CreDtaVct { get; set; }
 
         //------------------------------------------------------------------------------------
-        public Moeda CreVlrSdo { get; set; } = null!;
+        public Moeda CreVlrSdo { get; set; } = null!; //[KeyLess]?  https://docs.microsoft.com/pt-br/ef/core/modeling/keyless-entity-types?tabs=data-annotations
         public Moeda CreVlrDup { get; set; } = null!;
 
         //------------------------------------------------------------------------------------

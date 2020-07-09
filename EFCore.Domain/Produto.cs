@@ -28,7 +28,7 @@ namespace EFCore.Domain
         public string ProNcm { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.Status_AtivoInativo)] 
+        [Column(TypeName = Type.Type.Status_AtivoInativo)]
         public Status_AtivoInativo? ProSts { get; set; }// '?' => null = true
 
         //------------------------------------------------------------------------------------

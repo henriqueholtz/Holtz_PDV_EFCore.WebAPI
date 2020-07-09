@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Repo.Migrations
 {
     [DbContext(typeof(EmpresaContext))]
-    [Migration("20200707090806_002")]
-    partial class _002
+    [Migration("20200709225854_001")]
+    partial class _001
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,20 +27,16 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("EmpCpfCnpj")
-                        .HasColumnType("nvarchar(18)")
-                        .HasMaxLength(18);
+                        .HasColumnType("VARCHAR(18)");
 
                     b.Property<string>("EmpFan")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
                     b.Property<string>("EmpRaz")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
-                    b.Property<string>("EmpSts")
-                        .HasColumnType("VARCHAR(1)")
-                        .HasMaxLength(1);
+                    b.Property<byte?>("EmpSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("EmpCod");
 
@@ -58,18 +54,36 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("FilFan")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
                     b.Property<string>("FilRaz")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
                     b.HasKey("FilCod");
 
                     b.HasIndex("EmpCod");
 
                     b.ToTable("Filial");
+                });
+
+            modelBuilder.Entity("EFCore.Domain.Marca", b =>
+                {
+                    b.Property<int>("MarCod")
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
+
+                    b.Property<int>("EmpCod")
+                        .HasColumnType("int")
+                        .HasMaxLength(8);
+
+                    b.Property<string>("MarNom")
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.HasKey("MarCod");
+
+                    b.HasIndex("EmpCod");
+
+                    b.ToTable("Marca");
                 });
 
             modelBuilder.Entity("EFCore.Domain.Pessoa", b =>
@@ -83,20 +97,16 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("PesCpfCnpj")
-                        .HasColumnType("nvarchar(18)")
-                        .HasMaxLength(18);
+                        .HasColumnType("VARCHAR(18)");
 
                     b.Property<string>("PesFan")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
                     b.Property<string>("PesRaz")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
-                    b.Property<string>("PesSts")
-                        .HasColumnType("VARCHAR(1)")
-                        .HasMaxLength(1);
+                    b.Property<byte?>("PesSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("PesCod");
 
@@ -116,20 +126,16 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("ProNcm")
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("ProNom")
-                        .HasColumnType("nvarchar(130)")
-                        .HasMaxLength(130);
+                        .HasColumnType("VARCHAR(150)");
 
                     b.Property<string>("ProObs")
-                        .HasColumnType("nvarchar(1000)")
-                        .HasMaxLength(1000);
+                        .HasColumnType("VARCHAR(1000)");
 
-                    b.Property<string>("ProSts")
-                        .HasColumnType("VARCHAR(1)")
-                        .HasMaxLength(1);
+                    b.Property<byte?>("ProSts")
+                        .HasColumnType("TINYINT");
 
                     b.HasKey("ProCod");
 
@@ -145,16 +151,13 @@ namespace EFCore.Repo.Migrations
                         .HasMaxLength(8);
 
                     b.Property<string>("UsuNom")
-                        .HasColumnType("nvarchar(70)")
-                        .HasMaxLength(70);
+                        .HasColumnType("VARCHAR(75)");
 
-                    b.Property<string>("UsuSts")
-                        .HasColumnType("VARCHAR(1)")
-                        .HasMaxLength(1);
+                    b.Property<byte?>("UsuSts")
+                        .HasColumnType("TINYINT");
 
                     b.Property<string>("UsuTip")
-                        .HasColumnType("nvarchar(1)")
-                        .HasMaxLength(1);
+                        .HasColumnType("VARCHAR(1)");
 
                     b.HasKey("UsuCod");
 
@@ -179,6 +182,15 @@ namespace EFCore.Repo.Migrations
                 });
 
             modelBuilder.Entity("EFCore.Domain.Filial", b =>
+                {
+                    b.HasOne("EFCore.Domain.Empresa", "empresa")
+                        .WithMany()
+                        .HasForeignKey("EmpCod")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EFCore.Domain.Marca", b =>
                 {
                     b.HasOne("EFCore.Domain.Empresa", "empresa")
                         .WithMany()
