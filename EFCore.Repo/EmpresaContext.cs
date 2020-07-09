@@ -1,10 +1,6 @@
 ﻿using EFCore.Domain;
-using EFCore.Enums;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EFCore.Type;
 //get-help entityFrameworkCore (View->Other Windows->Package Mananger Console)
 
 namespace EFCore.Repo
@@ -17,7 +13,8 @@ namespace EFCore.Repo
         public DbSet<Pessoa> Pessoa { get; set; }
         public DbSet<Produto> Produto { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
-
+        public DbSet<Marca> Marca { get; set; }
+        //public DbSet<Duplicata> Duplicata { get; set; }
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,47 +26,63 @@ namespace EFCore.Repo
             //Company
             modelBuilder.Entity<Empresa>(entity =>
             {
-                //entity.HasKey(e => new { e.EmpCod});//Define PK
                 entity.Property(e => e.EmpCod).ValueGeneratedNever(); //Remove Identity
-                //entity.Property(e => e.EmpCpfCnpj).HasColumnType("VARCHAR(18)");//Define Type and size
-                //entity.Property(e => e.EmpCod).HasMaxLength(8); //Define Type and size
-                entity.Property(empSts => empSts.EmpSts).HasColumnType(Type.Status_AtivoInativo.Type);
             });
+
             //User
             modelBuilder.Entity<Usuario>(entity =>
             {
-                //entity.HasKey(e => new { e.UsuCod });//Define PK
                 entity.Property(e => e.UsuCod).ValueGeneratedNever();//Remove Identity
-                entity.Property(usuSts => usuSts.UsuSts).HasColumnType(Type.Status_AtivoInativo.Type);
             });
+
             //User - Companies
             modelBuilder.Entity<UsuarioEmpresas>(entity =>
             {
-                //entity.HasKey(e => new { e.UsuCod, e.EmpCod });//Define PK
                 entity.Property(e => e.UsuCod).ValueGeneratedNever();//Remove Identity
                 entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
             });
+
             //Filial
             modelBuilder.Entity<Filial>(entity => 
             {
-                //entity.HasKey(e => new { e.EmpCod, e.FilCod });//Define PK
+                entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
                 entity.Property(e => e.FilCod).ValueGeneratedNever();//Remove Identity
             });
+
             //Pessoa
             modelBuilder.Entity<Pessoa>(entity =>
             {
-                //entity.HasKey(e => new { e.EmpCod, e.PesCod });//Define PK
                 entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
                 entity.Property(e => e.PesCod).ValueGeneratedNever();//Remove Identity
-                entity.Property(pesSts => pesSts.PesSts).HasColumnType(Type.Status_AtivoInativo.Type);
             });
-            //Produto
+
+            //Product
             modelBuilder.Entity<Produto>(entity =>
             {
-                //entity.HasKey(e => new { e.EmpCod, e.ProCod });//Define PK
+                entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
                 entity.Property(e => e.ProCod).ValueGeneratedNever();//Remove Identity
-                entity.Property(proSts => proSts.ProSts).HasColumnType(Type.Status_AtivoInativo.Type);
             });
+
+            //Brand (pt-br: Marca)
+            modelBuilder.Entity<Marca>(entity =>
+            {
+                entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
+                entity.Property(pk => pk.MarCod).ValueGeneratedNever(); //Remove Identity
+            });
+
+            //Duplicate (pt-br: Duplicata)
+
+
+            //ERROR =>
+
+            //modelBuilder.Entity<Duplicata>().HasNoKey(); //The entity type 'Moeda' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'
+            //modelBuilder.Entity<Duplicata>(entity =>
+            //{
+            //    entity.Property(e => e.EmpCod).ValueGeneratedNever();//Remove Identity
+            //    entity.Property(pk => pk.CreCod).ValueGeneratedNever();//RemoveIdentity
+            //    //entity.Property(vlrDup => vlrDup.CreVlrDup).HasColumnType(Type.Moeda.Type);
+            //    //entity.Property(vlrSdo => vlrSdo.CreVlrSdo).HasColumnType(Type.Moeda.Type);
+            //});
         }
     }
 }

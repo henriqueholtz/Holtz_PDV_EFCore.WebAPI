@@ -6,4 +6,3 @@ D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\CEFCore.Enums\obj\Debug\netstand
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\CEFCore.Enums\obj\Debug\netstandard2.0\EFCore.Enums.csproj.CoreCompileInputs.cache
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\CEFCore.Enums\obj\Debug\netstandard2.0\EFCore.Enums.dll
 D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\CEFCore.Enums\obj\Debug\netstandard2.0\EFCore.Enums.pdb
-D:\Visual Studio\GitHub\Holtz_PDV_EFCore.WebAPI\CEFCore.Enums\obj\Debug\netstandard2.0\EFCore.Enums.csprojAssemblyReference.cache

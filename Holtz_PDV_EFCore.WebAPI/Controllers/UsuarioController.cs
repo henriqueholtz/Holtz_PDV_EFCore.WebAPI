@@ -53,7 +53,7 @@ namespace Holtz_PDV_EFCore.WebAPI.Controllers
         {
             try
             {
-                var usuario = new Usuario() { UsuCod = cod, UsuNom = nome, UsuSts = Status_AtivoInativo.ATIVO};
+                var usuario = new Usuario() { UsuCod = cod, UsuNom = nome, UsuSts = Enums.Status_AtivoInativo.ATIVO};
                 _repo.Add(usuario);
                 if(await _repo.SaveChangeAsync())
                 {

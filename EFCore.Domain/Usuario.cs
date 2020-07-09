@@ -2,20 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EFCore.Enums;
+using Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCore.Domain
 {
     public class Usuario
     {
+        //------------------------------------------------------------------------------------
         [MaxLength(8)] [Key]
         public int UsuCod { get; set; }
-        [StringLength(70)]
+
+        //------------------------------------------------------------------------------------
+        [Column(TypeName = Type.Type.VarChar75)]
         public string UsuNom { get; set; } = null!;
-        [StringLength(1)]
+
+        //------------------------------------------------------------------------------------
+        [Column(TypeName = Type.Type.Status_AtivoInativo)]
         public Status_AtivoInativo? UsuSts { get; set; }// '?' => null = true
-        [StringLength(1)]
+
+        //------------------------------------------------------------------------------------
+        [Column(TypeName = Type.Type.Tipo_Usuario)]
         public string UsuTip { get; set; } = null!;
+
+        //------------------------------------------------------------------------------------
     }
 }

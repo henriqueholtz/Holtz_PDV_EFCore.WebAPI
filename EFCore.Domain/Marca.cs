@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Enums;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCore.Domain
 {
-    public class Filial
+    public class Marca
     {
         //------------------------------------------------------------------------------------
         [MaxLength(8)] [ForeignKey("empresa")]
         public int EmpCod { get; set; }
         public Empresa empresa { get; set; }
+
         //------------------------------------------------------------------------------------
         [MaxLength(8)][Key]
-        public int FilCod { get; set; }
+        public int MarCod { get; set; }
+
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
-        public string FilRaz { get; set; } = null!;
-        //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
-        public string FilFan { get; set; } = null!;
+        [Column(TypeName = Type.Type.VarChar50)]
+        public string MarNom { get; set; } = null!;
+
         //------------------------------------------------------------------------------------
     }
 }

@@ -1,27 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿
+using EFCore.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCore.Domain
 {
-    public class Filial
+    public class Duplicata
     {
         //------------------------------------------------------------------------------------
-        [MaxLength(8)] [ForeignKey("empresa")]
+        [MaxLength(8)]
+        [ForeignKey("empresa")]
         public int EmpCod { get; set; }
         public Empresa empresa { get; set; }
+
         //------------------------------------------------------------------------------------
-        [MaxLength(8)][Key]
-        public int FilCod { get; set; }
+        [MaxLength(8)] [Key]
+        public int CreCod { get; set; }
+
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
-        public string FilRaz { get; set; } = null!;
+        public DateTime CreDtaEms { get; set; }
+        public DateTime CreDtaVct { get; set; }
+
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
-        public string FilFan { get; set; } = null!;
+        public Moeda CreVlrSdo { get; set; } = null!;
+        public Moeda CreVlrDup { get; set; } = null!;
+
         //------------------------------------------------------------------------------------
     }
 }
