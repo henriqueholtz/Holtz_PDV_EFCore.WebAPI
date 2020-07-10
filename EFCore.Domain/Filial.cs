@@ -17,10 +17,10 @@ namespace EFCore.Domain
         [MaxLength(8)][Key]
         public int FilCod { get; set; }
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
+        [Column(TypeName = Type.Type.VARCHAR150)]
         public string FilRaz { get; set; } = null!;
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
+        [Column(TypeName = Type.Type.VARCHAR150)]
         public string FilFan { get; set; } = null!;
         //------------------------------------------------------------------------------------
     }

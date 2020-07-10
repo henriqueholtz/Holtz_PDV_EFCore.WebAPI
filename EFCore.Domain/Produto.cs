@@ -16,19 +16,19 @@ namespace EFCore.Domain
         public int ProCod { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)] 
+        [Column(TypeName = Type.Type.VARCHAR150)] 
         public string ProNom { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar1000)] 
+        [Column(TypeName = Type.Type.VARCHAR1000)] 
         public string ProObs { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar50)] 
+        [Column(TypeName = Type.Type.VARCHAR50)] 
         public string ProNcm { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.Status_AtivoInativo)]
+        [Column(TypeName = Type.Type.STATUS_ATIVO_INATIVO)]
         public Status_AtivoInativo? ProSts { get; set; }// '?' => null = true
 
         //------------------------------------------------------------------------------------

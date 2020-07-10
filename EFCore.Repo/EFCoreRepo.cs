@@ -28,6 +28,10 @@ namespace EFCore.Repo
         {
             _context.Remove(entity);
         }
+        public void Clear()
+        {
+            _context.Dispose();
+        }
 
         public async Task<bool> SaveChangeAsync()
         {
@@ -97,5 +101,6 @@ namespace EFCore.Repo
                 .Where(where => where.FilCod == ParFilCod);
             return await query.FirstOrDefaultAsync();
         }
+
     }
 }

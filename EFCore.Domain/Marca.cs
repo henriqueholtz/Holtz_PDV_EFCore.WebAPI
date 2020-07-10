@@ -16,7 +16,7 @@ namespace EFCore.Domain
         public int MarCod { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar50)]
+        [Column(TypeName = Type.Type.VARCHAR50)]
         public string MarNom { get; set; } = null!;
 
         //------------------------------------------------------------------------------------

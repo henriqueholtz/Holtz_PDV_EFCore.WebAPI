@@ -17,19 +17,19 @@ namespace EFCore.Domain
         public int EmpCod { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
+        [Column(TypeName = Type.Type.VARCHAR150)]
         public string EmpRaz { get; set; } = null!;
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar150)]
+        [Column(TypeName = Type.Type.VARCHAR150)]
         public string EmpFan { get; set; } = null!;
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.CpfCnpj)]
+        [Column(TypeName = Type.Type.CPF_CNPJ)]
         public string EmpCpfCnpj { get; set; } = null!;
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.Status_AtivoInativo)]
+        [Column(TypeName = Type.Type.STATUS_ATIVO_INATIVO)]
         public Status_AtivoInativo? EmpSts { get; set; }// '?' => null = true
 
         //------------------------------------------------------------------------------------

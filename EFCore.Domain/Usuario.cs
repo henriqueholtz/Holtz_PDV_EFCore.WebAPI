@@ -15,16 +15,16 @@ namespace EFCore.Domain
         public int UsuCod { get; set; }
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.VarChar75)]
+        [Column(TypeName = Type.Type.VARCHAR75)]
         public string UsuNom { get; set; } = null!;
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.Status_AtivoInativo)]
+        [Column(TypeName = Type.Type.STATUS_ATIVO_INATIVO)]
         public Status_AtivoInativo? UsuSts { get; set; }// '?' => null = true
 
         //------------------------------------------------------------------------------------
-        [Column(TypeName = Type.Type.Tipo_Usuario)]
-        public string UsuTip { get; set; } = null!;
+        [Column(TypeName = Type.Type.TIPO_USUARIO)]
+        public Tipo_Usuario? UsuTip { get; set; }// = null!;
 
         //------------------------------------------------------------------------------------
     }

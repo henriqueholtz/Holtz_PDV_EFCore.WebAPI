@@ -9,18 +9,18 @@
         ATIVO = 1,
         INATIVO = 0
     }
-    public enum Status_Duplicata
+    public enum Status_Duplicata : byte
     {
-        /*ABERTA = 'ABERTA',
-        CANCELADA = 'CANC'*/
+        ABERTA = 1,
+        CANCELADA = 2
     }
 
 
     /***************\
          TIPOS
     \***************/
-    public enum Tipo_Usuario
+    public enum Tipo_Usuario : byte
     {
-        SUPORTE = '-'
+        SUPORTE = 1
     }
 }

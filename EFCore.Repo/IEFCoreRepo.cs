@@ -11,7 +11,7 @@ namespace EFCore.Repo
         void Add<t>(t entity) where t : class;
         void Update<t>(t entity) where t : class;
         void Delete<t>(t entity) where t : class;
-
+        void Clear();
         Task<bool> SaveChangeAsync();
         //Empresa
         Task<Empresa[]> GetAllEmpresas();

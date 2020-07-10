@@ -2,26 +2,26 @@
 {
     public class Type
     {
-        public const string VarChar30     = "VARCHAR(30)";
-        public const string VarChar50     = "VARCHAR(50)";
-        public const string VarChar75     = "VARCHAR(75)";
-        public const string VarChar100    = "VARCHAR(100)";
-        public const string VarChar130    = "VARCHAR(130)";
-        public const string VarChar150    = "VARCHAR(150)";
-        public const string VarChar300    = "VARCHAR(300)";
-        public const string VarChar500    = "VARCHAR(500)";
-        public const string VarChar1000   = "VARCHAR(1000)";
-        public const string VarChar10000  = "VARCHAR(10000)";
+        public const string VARCHAR30     = "VARCHAR(30)";
+        public const string VARCHAR50     = "VARCHAR(50)";
+        public const string VARCHAR75     = "VARCHAR(75)";
+        public const string VARCHAR100    = "VARCHAR(100)";
+        public const string VARCHAR130    = "VARCHAR(130)";
+        public const string VARCHAR150    = "VARCHAR(150)";
+        public const string VARCHAR300    = "VARCHAR(300)";
+        public const string VARCHAR500    = "VARCHAR(500)";
+        public const string VARCHAR1000   = "VARCHAR(1000)";
+        public const string VARCHAR10000  = "VARCHAR(10000)";
 
 
-        public const string Status_AtivoInativo = "TINYINT";
-        public const string Status_Duplicata    = "VARCHAR(8)";
+        public const string STATUS_ATIVO_INATIVO = "TINYINT"; //0 - 255
+        public const string STATUS_DUPLICATA    = "TINYINT"; //0 - 255
 
 
-        public const string Tipo_Usuario = "VARCHAR(1)";
+        public const string TIPO_USUARIO = "TINYINT"; //0 - 255
 
 
-        public const string CpfCnpj = "VARCHAR(18)";
-        public const string Moeda = "DECIMAL(17,2)";
+        public const string CPF_CNPJ = "VARCHAR(18)";
+        public const string MOEDA = "DECIMAL(17,2)";
     }
 }
